@@ -62,32 +62,32 @@ public class remote_EJB_client {
                     System.out.println("Exiting...");
                     return;
                 }
-                default -> System.out.println("Invalid choice, try again.");
+                default -> System.out.println("erreur, try again.");
             }
         }
     }
 
     private static void viewAvailableCDs() {
         List<CD> cds = ejbStateful.getCDs();
-        System.out.println("\nAvailable CDs:");
+        System.out.println("\nCDs available:");
         cds.forEach(cd -> System.out.println(cd.getTitle() + " by " + cd.getArtist() + " - Available: " + cd.isAvailable()));
     }
 
     private static void borrowCD(Scanner scanner) {
-        System.out.print("\nEnter CD title to borrow: ");
+        System.out.print("\nTitre du CD: ");
         String title = scanner.nextLine();
-        System.out.print("Enter CD artist: ");
+        System.out.print("Artiste: ");
         String artist = scanner.nextLine();
         ejbStateless.pretCD(title, artist);
-        System.out.println("Attempted to borrow CD: " + title + " by " + artist);
+        System.out.println("CD a emprunter : " + title + " by " + artist);
     }
 
     private static void returnCD(Scanner scanner) {
-        System.out.print("\nEnter CD title to return: ");
+        System.out.print("\nTitre du CD: ");
         String title = scanner.nextLine();
-        System.out.print("Enter CD artist: ");
+        System.out.print("Artiste: ");
         String artist = scanner.nextLine();
         ejbStateless.retourCD(title, artist);
-        System.out.println("Attempted to return CD: " + title + " by " + artist);
+        System.out.println("CD a retourner: " + title + " by " + artist);
     }
 }
