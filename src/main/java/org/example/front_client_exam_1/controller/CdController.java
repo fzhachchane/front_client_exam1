@@ -1,7 +1,5 @@
 package org.example.front_client_exam_1.controller;
 
-package org.example.hello_world_ejb_2.controller;
-
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
