@@ -3,6 +3,8 @@ package org.example.front_client_exam_1.controller;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
+import org.example.front_client_exam_1.model.CD;
+
 import org.example.hello_world_ejb_2.beans.EjbStateless;
 import org.example.hello_world_ejb_2.beans.EjbStateful;
 import org.example.hello_world_ejb_2.model.CD;
@@ -15,10 +17,10 @@ import java.util.List;
 @RequestScoped
 public class CdController {
 
-    @EJB
+    @EJB(beanName = "EjbStatelessBean")
     private EjbStateless ejbStateless;
 
-    @EJB
+    @EJB(beanName = "EjbStatefulBean")
     private EjbStateful ejbStateful;
 
     private String title;
